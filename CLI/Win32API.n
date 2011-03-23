@@ -1,0 +1,171 @@
+﻿using System;
+using System.Runtime.InteropServices;
+
+namespace Injection_L
+{
+  static class MemoryAPI
+  {
+        [ Flags ]
+        public enum AllocationType
+        {
+            | Commit = 0x1000
+        }
+
+        [ Flags ]
+        public enum ProcessAccess : int
+        {
+            | VMOperation = 0x8
+            | VMRead      = 0x10
+            | VMWrite     = 0x20
+        }
+
+        [ Flags ]
+        public enum MemoryProtection
+        {   
+            | ReadWrite = 0x04
+        }
+
+        public SE_PRIVILEGE_ENABLED = 0x00000002 : UInt32;
+        public TOKEN_QUERY = 0x00000008 : int;
+        public TOKEN_ADJUST_PRIVILEGES = 0x00000020 : int;
+        public SE_TIME_ZONE_NAMETEXT = "SeTimeZonePrivilege" : string; 
+
+        [StructLayout(LayoutKind.Sequential)]
+            public struct LUID {
+            internal mutable LowPart : uint;
+            internal mutable HighPart : uint;
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public struct TOKEN_PRIVILEGES
+        {
+            public mutable PrivilegeCount : UInt32;
+            public mutable Luid : LUID;
+            public mutable Attributes : UInt32;
+        }
+
+
+        public struct MOUSEINPUT
+        {
+                dx : int;
+                dy : int;
+                mouseData : int;
+                dwFlags : int;
+                time : int;
+                dwExtraInfo : IntPtr;
+        }
+
+        public struct KEYBDINPUT
+        {
+                public mutable wVk : char ;
+                public wScan : short ;
+                public dwFlags : int ;
+                public time : int ;
+                public dwExtraInfo : IntPtr ;
+        }
+
+        public struct HARDWAREINPUT
+        {
+                uMsg : int ;
+                wParamL : short ;
+                wParamH : short ;
+        }
+
+        [StructLayout(LayoutKind.Explicit)]
+        public struct INPUT
+        {
+                [FieldOffset(0)]
+                public mutable typefield : int ; 
+                [FieldOffset(4)]
+                mi : MOUSEINPUT;
+                [FieldOffset(4)]
+                public mutable ki : KEYBDINPUT;
+                [FieldOffset(4)]
+                hi : HARDWAREINPUT;
+        }
+
+        [DllImport("user32.dll")]
+        public static extern keybd_event(
+            bVk : byte,
+            bScan : byte,
+            dwFlags : uint,
+            dwExtraInfo : UIntPtr) : void ;
+        
+        [DllImport("user32.dll")]
+        public static extern SendInput(
+            nInputs : uint,
+            pInputs : ref INPUT, 
+            cbSize : int) : uint;
+  
+        [DllImport("user32.dll")]
+            public static extern FindWindow(
+            lpClassName : String,
+            lpWindowName : String) : IntPtr;
+        
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern GetWindowThreadProcessId(
+            hWnd : IntPtr,
+            lpdwProcessId : out uint
+            ) : IntPtr;
+        
+        [DllImport("kernel32.dll")]
+        public static extern ReadProcessMemory(OpenedHandle : IntPtr,lpBaseAddress : IntPtr,lpBuffer : array[byte],
+        size : UInt32,lpNumberOfBytesRead : out IntPtr) : Int32;
+                                                    
+        [DllImport("kernel32.dll")]
+        public static extern CloseHandle(hObject : IntPtr) : Int32;
+        
+        [ DllImport("kernel32.dll") ]
+        public extern OpenProcess
+            ( dwDesiredAccess : ProcessAccess
+            , bInheritHandle  : bool
+            , dwProcessId     : UInt32
+            ) : IntPtr;
+
+        [ DllImport("kernel32.dll", SetLastError = true, ExactSpelling = true) ]
+        public extern VirtualAllocEx
+            ( hProcess         : IntPtr
+            , lpAddress        : IntPtr
+            , dwSize           : uint
+            , flAllocationType : AllocationType
+            , flProtect        : MemoryProtection
+            ) : IntPtr;
+
+        [ DllImport("kernel32.dll", SetLastError = true) ]
+        public extern WriteProcessMemory
+            ( hProcess               : IntPtr
+            , lpBaseAddress          : IntPtr
+            , lpBuffer               : array[byte]
+            , nSize                  : uint
+            , lpNumberOfBytesWritten : out int
+            ) : bool;
+
+        
+        [DllImport("kernel32")]
+        public static extern GetCurrentProcess() : IntPtr;
+        
+        [DllImport("user32.dll")]
+        public static extern ShowWindow(hWnd : IntPtr,nCmdShow : int) : bool;
+        
+        [DllImport("advapi32.dll")]
+        public static extern OpenProcessToken(
+            ProcessHandle : IntPtr,
+            DesiredAccess : long,
+            TokenHandle : ref IntPtr) : bool;
+        
+        [DllImport("advapi32.dll")]
+        public static extern LookupPrivilegeValue(
+            lpSystemName : String,
+            lpName : String,
+            lpLuid : ref LUID) : bool;
+        
+        [DllImport("advapi32.dll", ExactSpelling = true, SetLastError = true)]
+        public static extern AdjustTokenPrivileges(
+            TokenHandle : IntPtr,
+            DisableAllPrivileges : bool,
+            NewState : ref TOKEN_PRIVILEGES,
+            BufferLength : int,
+            PreviousState : IntPtr,
+            ReturnLength : IntPtr) : bool;
+  }
+}
