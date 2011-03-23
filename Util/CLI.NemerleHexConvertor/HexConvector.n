@@ -1,0 +1,64 @@
+﻿#pragma indent
+
+using System
+using System.Collections.Generic
+using System.Linq
+using System.Text
+
+namespace nCL
+    public sealed class HexEncoding : Encoding
+    
+        public static Hex : HexEncoding = HexEncoding()
+        private static HexAlphabet : array[char]
+        private static HexValues : array[byte]
+
+        public static this()
+            HexAlphabet = array[ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' ]
+            HexValues = array(255)
+            for ( mutable i = 0 ; i < HexValues.Length ; i++ ) 
+                def c = i :> char
+                when ( "0123456789abcdefABCDEF".IndexOf( c ) > -1 ) 
+                    HexValues[i] = System.Convert.ToByte( c.ToString( ), 16 )
+
+        public override EncodingName : string
+            get 
+                "Hex"
+
+        public override IsSingleByte : bool
+            get
+                true
+
+        public override GetByteCount( _ : array[char], _ : int, count : int ) : int
+            count / 2
+
+        public override GetBytes( chars : array[char], charIndex : int, charCount : int, bytes : array[byte], byteIndex : int ) : int
+            mutable ci = charIndex;
+            mutable bi = byteIndex;
+            while ( ci < ( charIndex + charCount ) ) 
+                def c1 = chars[ci]; ci++;
+                def c2 = chars[ci]; ci++;
+                def b1 = HexValues[c1 :> int];
+                def b2 = HexValues[c2 :> int];
+                bytes[bi] = ( b1 << 4 | b2 ) :> byte; bi++;
+            charCount / 2
+
+        public override GetCharCount( _ : array[byte], _ : int, count : int ) : int
+            count * 2
+
+        public override GetChars( bytes : array[byte], byteIndex : int, byteCount : int, chars : array[char], charIndex : int ) : int
+            mutable ci = charIndex;
+            mutable bi = byteIndex;
+            while ( bi < ( byteIndex + byteCount ) )
+                def b1 = bytes[bi] >> 4;
+                def b2 = bytes[bi] & 0xF; bi++;
+                def c1 = HexAlphabet[b1];
+                def c2 = HexAlphabet[b2];
+                chars[ci] = c1; ci++;
+                chars[ci] = c2; ci++;
+            byteCount * 2
+
+        public override GetMaxByteCount( charCount : int ) : int
+            charCount / 2
+    
+        public override GetMaxCharCount( byteCount : int ) : int
+            byteCount * 2
