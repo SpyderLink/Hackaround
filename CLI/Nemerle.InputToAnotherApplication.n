@@ -1,0 +1,44 @@
+#pragma indent
+
+using System
+using Injection_L.MemoryAPI
+using System.Runtime.InteropServices
+
+namespace Injection_L
+
+  public static class nLib
+  
+    public static VK_ENTER : byte = 0x0D 
+    protected static KEYEVENTF_KEYUP : uint = 0x2
+    public static VK_TAB : byte = 0x09
+ 
+    public static PressKey( keyCode : byte ) : Void
+        def KEYEVENTF_EXTENDEDKEY : uint = 0x1
+        def KEYEVENTF_KEYUP : uint       = 0x2
+        def zzz : UIntPtr = System.UIntPtr.Zero
+        keybd_event( keyCode, 0x45, KEYEVENTF_EXTENDEDKEY, zzz )
+        keybd_event( keyCode, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, zzz )
+    
+        
+    public static KeybInput( InStringI : string , speed : int) : Void
+    {
+        mutable x = 0 : int;
+        def InString=InStringI.ToUpperInvariant();
+            def go(mutable InStringChar : char) : Void
+            {
+                mutable mInput : INPUT  = INPUT();
+                mutable ki : KEYBDINPUT = KEYBDINPUT();
+                mInput.typefield = 1;
+                ki.wVk=InStringChar;
+                mInput.ki = ki;
+                System.Threading.Thread.Sleep(speed);
+                _=SendInput(1, ref mInput, Marshal.SizeOf(typeof(INPUT)));
+                x++;
+                unless(x==InString.Length) 
+                {
+                    InStringChar = InString.Chars[x];
+                    go(InStringChar)
+                }
+            }
+         go(InString.Chars[0])
+     }
