@@ -1,0 +1,22 @@
+    //Same that System.Diagnostics.Process.EnterDebugMode(); but on winAPI style
+    private GetDebugPrivilegies() : bool 
+            try
+                mutable retVal : bool
+                mutable tp : TOKEN_PRIVILEGES
+                def hproc : IntPtr = GetCurrentProcess()
+                mutable htok : IntPtr = IntPtr.Zero
+                retVal = OpenProcessToken(hproc, TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, ref htok)
+                tp.PrivilegeCount = 1
+                def ZEROX = LUID();
+                    ZEROX.LowPart=0
+                    ZEROX.HighPart=0
+                tp.Luid = ZEROX;
+                tp.Attributes = SE_PRIVILEGE_ENABLED
+                retVal = LookupPrivilegeValue(null, SE_TIME_ZONE_NAMETEXT, ref tp.Luid)
+                retVal = AdjustTokenPrivileges(htok, false, ref tp, 0, IntPtr.Zero, IntPtr.Zero)
+                retVal
+            catch
+                | _ is Exception => 
+                        Console.ForegroundColor=ConsoleColor.Red
+                        Console.WriteLine("Error while Getting Debug Privilegies")
+                        false
