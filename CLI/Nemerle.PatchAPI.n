@@ -1,0 +1,45 @@
+    public Patch(data : array[byte], BaseAddress : IntPtr) : void
+        unless(GotCorrectHandle){()} //ERROR : "Privilegies ERROR"   
+               
+        mutable ProcID : UInt32
+        
+        def WindowHandle : IntPtr = FindWindow(null, TargetWindow)
+
+        if (SearchByWindowName)
+            _=GetWindowThreadProcessId(WindowHandle, out ProcID)
+        else
+            ProcID=UInt32.Parse(TargetWindow) 
+    
+        process = OpenProcess( 
+            dwDesiredAccess
+            = ProcessAccess.VMOperation
+            | ProcessAccess.VMRead
+            | ProcessAccess.VMWrite
+            , bInheritHandle  = false
+            , dwProcessId     = ProcID
+        )
+        Console.WriteLine($"process: $process");
+    
+        mutable memory = VirtualAllocEx( 
+            hProcess         = process
+            , lpAddress        = BaseAddress //IntPtr.Zero
+            , dwSize           = data.Length :> uint
+            , flAllocationType = AllocationType.Commit
+            , flProtect        = MemoryProtection.ReadWrite
+            );
+        Console.WriteLine($"memory: $memory")
+
+        mutable bytesWritten;
+        _ = WriteProcessMemory( 
+            hProcess               = process
+            , lpBaseAddress          = memory
+            , lpBuffer               = data
+            , nSize                  = data.Length :> uint
+            , lpNumberOfBytesWritten = out bytesWritten
+            )
+        
+        Console.ForegroundColor=ConsoleColor.Blue
+        Console.WriteLine($"bytesWritten : $bytesWritten")
+    
+    public Dispose() : void
+        _=CloseHandle(process)
