@@ -20,6 +20,7 @@ void ScanPID(DWORD* list);
 void ScanMod(DWORD pid, DWORD* list);
 void Refresh_lb();
 
+char data[0x1000];
 DWORD pid_list[255];
 DWORD mod_list[255];
 DWORD sec_list[255];
@@ -40,7 +41,7 @@ void __fastcall TMainForm::b_fpathselClick(TObject *Sender)
 void __fastcall TMainForm::b_fhashClick(TObject *Sender)
 {
  char* data;
- FILE* in = fopen(e_fpath->Text.t_str(), "rb");
+ FILE* in = fopen(AnsiString(e_fpath->Text).c_str(), "rb");
  if (in == 0) {ShowMessage("File not found or can't be accessed for reading."); return;}
  fseek(in, 0, SEEK_END);
  unsigned long int size = ftell(in);
@@ -48,7 +49,7 @@ void __fastcall TMainForm::b_fhashClick(TObject *Sender)
 
  data = new char[size+1];
 
- DumpFile(data, e_fpath->Text.t_str());
+ DumpFile(data, AnsiString(e_fpath->Text).c_str());
  e_fhash->Text = UnicodeString(do_md5(data, size));
 
  delete[] data;
@@ -99,7 +100,6 @@ void DumpFile(char data[], char name[])
 //---------------------------------------------------------------------------
 void ScanPID(DWORD* list)
 {
- DWORD pid = 0;
  BOOL working = 0;
  PROCESSENTRY32 lppe = {0};
  lppe.dwFlags = sizeof(PROCESSENTRY32);
@@ -127,11 +127,9 @@ void ScanPID(DWORD* list)
 void ScanMod(DWORD pid, DWORD* list)
 {
  MainForm->lb_mod->Items->Clear();
- MainForm->tv_memspc->Items->Clear();
  MainForm->clb_sec->Items->Clear();
  memset(mod_list, 0, sizeof(mod_list));
 
- DWORD retval = 0;
  BOOL working = 0;
  MODULEENTRY32 me32 = {0};
  me32.dwSize = sizeof(MODULEENTRY32);
@@ -157,20 +155,19 @@ void ScanMod(DWORD pid, DWORD* list)
 //---------------------------------------------------------------------------
 void Refresh_lb()
 {
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TMainForm::b_refreshClick(TObject *Sender)
+{
  memset(pid_list, 0, sizeof(pid_list));
  memset(mod_list, 0, sizeof(mod_list));
  memset(sec_list, 0, sizeof(sec_list));
  memset(sec_ra_list, 0, sizeof(sec_ra_list));
  MainForm->lb_proc->Items->Clear();
  MainForm->lb_mod->Items->Clear();
- MainForm->tv_memspc->Items->Clear();
  MainForm->clb_sec->Items->Clear();
  ScanPID(pid_list);
-}
-//---------------------------------------------------------------------------
-void __fastcall TMainForm::b_refreshClick(TObject *Sender)
-{
- Refresh_lb();
 }
 //---------------------------------------------------------------------------
 
@@ -185,22 +182,21 @@ void __fastcall TMainForm::lb_modClick(TObject *Sender)
 {
  if (MainForm->lb_mod->ItemIndex != -1)
  {
-  MainForm->tv_memspc->Items->Clear();
   MainForm->clb_sec->Items->Clear();
   memset(sec_list, 0, sizeof(sec_list));
   memset(sec_ra_list, 0, sizeof(sec_ra_list));
 
-  char data[0x1000];
   char block[8]; block[8] = '\0';
   char temp[255];
   unsigned long int dwRead = 0;
   unsigned int i = 0;
   unsigned long int pe_base = 0;
-  DWORD size = 0;
-  TTreeNode* last_node = 0;
   memset(data, 0, sizeof(data));
   memset(block, 0, sizeof(block));
   memset(temp, 0, sizeof(temp));
+
+  sprintf(temp, "Base addr.: %X", mod_list[MainForm->lb_mod->ItemIndex]);
+  ShowMessage(temp);
 
   HANDLE hProc = OpenProcess(PROCESS_VM_READ, false, pid_list[MainForm->lb_proc->ItemIndex]);
 
@@ -214,20 +210,8 @@ void __fastcall TMainForm::lb_modClick(TObject *Sender)
 
   while (i < *(unsigned short int*)(pe_base + 0x06))
   {
-   memcpy(block, (void*)(pe_base + 0xF8 + 0x28*i), 8);
-   last_node = MainForm->tv_memspc->Items->Add(0, UnicodeString(block));
+   memcpy(block, (void*)(pe_base + 0xF8 + 0x28*i), 8);       //Section Name
    MainForm->clb_sec->Items->Add(UnicodeString(block));
-
-   memcpy(&size, (void*)(pe_base + 0xF8 + 0x28*i + 0x0C), 4);
-   sprintf(temp, "Rel. addr.: +0x%X", size);
-   sec_ra_list[i] = size;
-   MainForm->tv_memspc->Items->AddChild(last_node, UnicodeString(temp));
-
-   memcpy(&size, (void*)(pe_base + 0xF8 + 0x28*i + 0x10), 4);
-   sprintf(temp, "Size: 0x%X", size);
-   sec_list[i] = size;
-   MainForm->tv_memspc->Items->AddChild(last_node, UnicodeString(temp));
-
    i++;
   }
   CloseHandle(hProc);
@@ -272,3 +256,55 @@ void __fastcall TMainForm::b_mhashClick(TObject *Sender)
  }
 }
 //---------------------------------------------------------------------------
+void __fastcall TMainForm::clb_secClick(TObject *Sender)
+{
+ if (MainForm->clb_sec->ItemIndex != -1)
+ {
+   unsigned int i = MainForm->clb_sec->ItemIndex;
+   char temp[8];
+   DWORD byte4 = 0;
+   WORD  byte2 = 0;
+
+   DWORD pe_base = (unsigned long int)(data + (*(unsigned long int*)(data + 0x3C)));
+
+   memcpy(&byte4, (void*)(pe_base + 0xF8 + 0x28*i + 0x08), 4); //Virtual Size
+   sprintf(temp, "%X", byte4);
+   MainForm->e_vs->Text = UnicodeString(temp);
+
+   memcpy(&byte4, (void*)(pe_base + 0xF8 + 0x28*i + 0x0C), 4); //Virtual Address
+   sprintf(temp, "%X", byte4);
+   MainForm->e_va->Text = UnicodeString(temp);
+   sec_ra_list[i] = byte4;
+
+   memcpy(&byte4, (void*)(pe_base + 0xF8 + 0x28*i + 0x10), 4); //SizeOfRawData
+   sprintf(temp, "%X", byte4);
+   MainForm->e_szraw->Text = UnicodeString(temp);
+   sec_list[i] = byte4;
+
+   memcpy(&byte4, (void*)(pe_base + 0xF8 + 0x28*i + 0x14), 4); //PointerToRawData
+   sprintf(temp, "%X", byte4);
+   MainForm->e_p2raw->Text = UnicodeString(temp);
+
+   memcpy(&byte4, (void*)(pe_base + 0xF8 + 0x28*i + 0x18), 4); //PointerToRelocations
+   sprintf(temp, "%X", byte4);
+   MainForm->e_p2reloc->Text = UnicodeString(temp);
+
+   memcpy(&byte4, (void*)(pe_base + 0xF8 + 0x28*i + 0x1C), 4); //PointerToLineNumbers
+   sprintf(temp, "%X", byte4);
+   MainForm->e_p2ln->Text = UnicodeString(temp);
+
+   memcpy(&byte2, (void*)(pe_base + 0xF8 + 0x28*i + 0x20), 2); //NumberOfRelocations
+   sprintf(temp, "%X", byte2);
+   MainForm->e_numofreloc->Text = UnicodeString(temp);
+
+   memcpy(&byte2, (void*)(pe_base + 0xF8 + 0x28*i + 0x22), 2); //NumberOfLineNumbers
+   sprintf(temp, "%X", byte2);
+   MainForm->e_numofln->Text = UnicodeString(temp);
+
+   memcpy(&byte4, (void*)(pe_base + 0xF8 + 0x28*i + 0x24), 4); //Characteristics
+   sprintf(temp, "%X", byte4);
+   MainForm->e_char->Text = UnicodeString(temp);
+ }
+}
+//---------------------------------------------------------------------------
+
