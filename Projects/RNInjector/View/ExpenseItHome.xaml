@@ -67,7 +67,7 @@
                 <Label Style="{StaticResource labelStyle}" Content="{Binding Path=Role}"></Label>
             </StackPanel>
         </Grid>
-        <Button Grid.Row="4" Command="{Binding ApproveExpenseReportCommand}" Style="{StaticResource buttonStyle}" Grid.Column="1" Margin="0,143,5,12" Content="SomeButton" Width="188" IsEnabled="{Binding ConvertButtonEnabled}"></Button>
+        <Button Grid.Row="4" Command="{Binding Hack}" Style="{StaticResource buttonStyle}" Grid.Column="1" Margin="0,143,5,12" Content="SomeButton" Width="188" IsEnabled="{Binding ConvertButtonEnabled}"></Button>
         <Expander IsExpanded="{Binding LoginExpander}" Grid.Row="3" Grid.RowSpan="2" Header="Login" Height="129" Margin="-2,0,0,0" Name="expander1" VerticalAlignment="Top" BorderThickness="4">
             <Grid>
                 <Button Content="Login" Command="{Binding LoginCommand}" Height="23" HorizontalAlignment="Left" Margin="79,71,0,0" Name="LoginButton" VerticalAlignment="Top" Width="75" IsDefault="True" />

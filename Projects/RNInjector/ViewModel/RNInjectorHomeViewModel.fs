@@ -46,6 +46,10 @@ type RNInjectorHomeViewModel(accountRepository : AccountRepository)  =
                 X.Login     <- ""
                 X.Password  <- "" ))
 
+
+    member X.Hack = 
+        new RelayCommand ((fun canExecute -> true), (fun action -> Hack.Inject() ))
+
     member X.Login
         with get()      = login
         and set value   = 

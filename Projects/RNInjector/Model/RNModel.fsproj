@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Expense.fs" />
     <Compile Include="AccountModel.fs" />
+    <Compile Include="Injector.fs" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +48,13 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hackaround\Hackaround.fsproj">
+      <Name>Hackaround</Name>
+      <Project>{a7b9bbcd-18df-4d10-a14c-f14955a45a38}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	     Other similar extension points exist, see Microsoft.Common.targets.

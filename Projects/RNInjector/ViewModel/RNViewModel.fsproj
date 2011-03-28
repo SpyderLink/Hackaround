@@ -49,6 +49,11 @@
     <Compile Include="RNInjectorHomeViewModel.fs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hackaround\Hackaround.fsproj">
+      <Name>Hackaround</Name>
+      <Project>{a7b9bbcd-18df-4d10-a14c-f14955a45a38}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Model\RNModel.fsproj">
       <Name>RNModel</Name>
       <Project>{13373e3a-d4e8-44a9-a506-471ebea624c3}</Project>
