@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="RNInjector.View.ExpenseItHome"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:RNInjector.ViewModel;assembly=ViewModel" mc:Ignorable="d" d:DesignHeight="262" d:DesignWidth="608">
+    <UserControl.DataContext>
+		<ViewModel:RNInjectorHomeViewModel></ViewModel:RNInjectorHomeViewModel>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <ResourceDictionary Source="ApplicationResources.xaml" />
+    </UserControl.Resources>
+    <Grid Margin="10,0,10,10" VerticalAlignment="Stretch">
+
+        <Grid.Resources>
+            <!-- Name item template -->
+            <DataTemplate x:Key="nameItemTemplate">
+                <Label Content="{Binding Path=Name}"/>
+            </DataTemplate>
+            <!-- Expense Type template -->
+            <DataTemplate x:Key="typeItemTemplate">
+                <Label Content="{Binding Path=ExpenseType}"/>
+            </DataTemplate>
+            <!-- Amount item template -->
+            <DataTemplate x:Key="amountItemTemplate">
+                <Label Content="{Binding Path=ExpenseAmount}"/>
+            </DataTemplate>
+
+        </Grid.Resources>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="watermark.png"  />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="156*" />
+            <ColumnDefinition Width="340*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="41"/>
+            <RowDefinition Height="124*" />
+        </Grid.RowDefinitions>
+        <!-- People list -->
+		<Label Grid.ColumnSpan="2" Style="{StaticResource headerTextStyle}" Content="RNInjector"></Label>
+        <Grid Margin="0,25,0,0" Grid.Row="3" DataContext="{Binding SelectedAccount}" VerticalAlignment="Top" Grid.RowSpan="2" Height="57">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="61*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="92*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!-- Name -->
+            <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal">
+                <Label Style="{StaticResource labelStyle}">Name:</Label>
+                <Label Style="{StaticResource labelStyle}" Content="{Binding Path=Name}"></Label>
+            </StackPanel>
+            <!-- Department -->
+            <StackPanel Grid.ColumnSpan="3" Grid.Row="1" Orientation="Horizontal">
+                <Label Style="{StaticResource labelStyle}" Content="Role:"></Label>
+                <Label Style="{StaticResource labelStyle}" Content="{Binding Path=Role}"></Label>
+            </StackPanel>
+        </Grid>
+        <Button Grid.Row="4" Command="{Binding ApproveExpenseReportCommand}" Style="{StaticResource buttonStyle}" Grid.Column="1" Margin="0,143,5,12" Content="SomeButton" Width="188" IsEnabled="{Binding ConvertButtonEnabled}"></Button>
+        <Expander IsExpanded="{Binding LoginExpander}" Grid.Row="3" Grid.RowSpan="2" Header="Login" Height="129" Margin="-2,0,0,0" Name="expander1" VerticalAlignment="Top" BorderThickness="4">
+            <Grid>
+                <Button Content="Login" Command="{Binding LoginCommand}" Height="23" HorizontalAlignment="Left" Margin="79,71,0,0" Name="LoginButton" VerticalAlignment="Top" Width="75" IsDefault="True" />
+                <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" Height="28" HorizontalAlignment="Left" Margin="61,6,0,0" Name="Login" VerticalAlignment="Top" Width="142" />
+                <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Height="26" HorizontalAlignment="Left" Margin="61,34,0,0" Name="Password" VerticalAlignment="Top" Width="142" />
+                <TextBlock Height="26" HorizontalAlignment="Left" Margin="0,6,0,0" Name="textBlock1" Text="Login" VerticalAlignment="Top" Width="64" FontWeight="Normal" FontSize="14"><TextBlock.Background><LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5"><GradientStop Color="#FF2E82A4" Offset="1" /><GradientStop Color="White" Offset="0.295" /></LinearGradientBrush></TextBlock.Background></TextBlock>
+                <TextBlock Height="26" HorizontalAlignment="Left" Margin="0,34,0,0" Name="textBlock2" Text="Password" VerticalAlignment="Top" Width="64" FontSize="14"><TextBlock.Background><LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5"><GradientStop Color="#FF2E82A4" Offset="1" /><GradientStop Color="White" Offset="0.295" /></LinearGradientBrush></TextBlock.Background></TextBlock>
+            </Grid>
+        </Expander>
+	</Grid>
+
+</UserControl>

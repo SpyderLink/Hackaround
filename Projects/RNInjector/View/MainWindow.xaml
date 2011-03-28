@@ -1,0 +1,5 @@
+﻿<Window x:Class="RNInjector.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:uc="clr-namespace:RNInjector.View" Title="RNInjector" Height="307" Width="681" Icon="/View;component/favicon.ico" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" Background="White">
+    <uc:ExpenseItHome/>
+</Window>
