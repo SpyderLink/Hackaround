@@ -9,7 +9,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RNConfig", "RNInjector\Repo
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RNModel", "RNInjector\Model\RNModel.fsproj", "{13373E3A-D4E8-44A9-A506-471EBEA624C3}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hackaround", "Hackaround\Hackaround.fsproj", "{A7B9BBCD-18DF-4D10-A14C-F14955A45A38}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hackaround", ""RNInjector\Hackaround\Hackaround.fsproj", "{A7B9BBCD-18DF-4D10-A14C-F14955A45A38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
