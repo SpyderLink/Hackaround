@@ -1,4 +1,3 @@
-
 /Projects/Hackaround/bin
 /Projects/Hackaround/obj
 /Projects/RNInjector/Model/obj
@@ -11,3 +10,4 @@
 /Projects/RNInjector/ViewModel/bin
 /Projects/RNInjector/Hackaround/obj
 /Projects/RNInjector/Hackaround/bin
+*.vs10x
