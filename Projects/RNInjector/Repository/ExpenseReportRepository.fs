@@ -4,19 +4,19 @@ open RNInjector.Model
 
 type AccountRepository() =
     member x.GetAll() =
-        seq{ yield {Name="Admin" 
-                    Role="Administrator" 
-                    Password = "helloworld"
+        seq{ yield {Name="nc" 
+                    Role="coder" 
+                    Password = "123"
                     ExpenseLineItems = 
                         [{ExpenseType="Lunch" 
                           ExpenseAmount="50"};
                          {ExpenseType="Transportation" 
                           ExpenseAmount="50"}]}
-             yield {Name="zzz"
-                    Role="zzz" 
-                    Password = "zzz"
+             yield {Name="desu"
+                    Role="coder" 
+                    Password = "321"
                     ExpenseLineItems = 
-                        [{ExpenseType="Document printing" 
+                        [{ExpenseType="Tralala" 
                           ExpenseAmount="50"};
                          {ExpenseType="Gift" 
                           ExpenseAmount="125"}]}    }

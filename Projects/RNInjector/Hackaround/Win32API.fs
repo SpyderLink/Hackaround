@@ -3,6 +3,8 @@
 open System
 open System.Runtime.InteropServices
 
+// This part of Code I want on C++0x CLI
+
 module HackAPI =
 
     [<DllImport("kernel32.dll")>]

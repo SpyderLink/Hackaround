@@ -7,6 +7,9 @@ open System
 
 module Hack = 
     let Inject() =
+
+        // This part of Code I want on C++0x CLI
+
         let wc3 = getProcess("War3")
 
         if (snd wc3) then

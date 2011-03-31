@@ -4,6 +4,8 @@ open System
 open System.Diagnostics
 open System.Runtime.InteropServices
 
+// This part of Code I want on C++0x CLI
+
 let ByteToHex bytes = 
     bytes 
     |> Array.map (fun (x : byte) -> System.String.Format("{0:X2}", x))
