@@ -1,0 +1,105 @@
+.serif {
+	FONT-FAMILY: "Times New Roman", "Geneva", "serif"
+}
+.sanserif {
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+.mono {
+	FONT-FAMILY: "Courier", "monospace"
+}
+A.noneline {
+	TEXT-DECORATION: none
+}
+.panel {
+	MARGIN-LEFT: 0px; WIDTH: 550px
+}
+.moff {
+	BORDER-RIGHT: white 2px solid; BORDER-TOP: white 2px solid; FONT: 8.5pt Verdana,Geneva,Arial,Helvetica,sans-serif; BORDER-LEFT: white 2px solid; WIDTH: 67px; CURSOR: hand; BORDER-BOTTOM: white 2px solid
+}
+.mOn {
+	BORDER-RIGHT: ivory 2px outset; BORDER-TOP: ivory 2px outset; FONT: 8.5pt Verdana,Geneva,Arial,Helvetica,sans-serif; BORDER-LEFT: ivory 2px outset; WIDTH: 67px; CURSOR: hand; BORDER-BOTTOM: ivory 2px outset
+}
+BODY {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; MARGIN: 0px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+TD {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; MARGIN: 0px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #e8e8ff; FONT-WEIGHT: normal; FONT-SIZE: 11px; SCROLLBAR-HIGHLIGHT-COLOR: #cccccc; SCROLLBAR-SHADOW-COLOR: #cccccc; SCROLLBAR-3DLIGHT-COLOR: #cccccc; SCROLLBAR-ARROW-COLOR: #888888; SCROLLBAR-TRACK-COLOR: #e8e8ff; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; SCROLLBAR-DARKSHADOW-COLOR: #cccccc
+}
+EM {
+	FONT-SIZE: 12pt; COLOR: blue; FONT-FAMILY: 'Times New Roman', serif; BACKGROUND-COLOR: #ffeeb3
+}
+.text1 {
+	FONT-WEIGHT: bold; COLOR: blue; FONT-FAMILY: arial, font-size: 10pt; BACKGROUND-COLOR: #ffeeb3
+}
+SMALL {
+	FONT-SIZE: 7.5pt; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+FIELDSET {
+	FONT-SIZE: 9pt; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+BLOCKQUOTE {
+	FONT-SIZE: 9pt; FONT-FAMILY: Verdana,Geneva,Times New Roman, Courier, Arial,Helvetica,sans-serif, Verdana,Geneva
+}
+PRE {
+	FONT-SIZE: 9pt; FONT-FAMILY: Verdana,Geneva,Times New Roman, Courier, Arial,Helvetica,sans-serif, Verdana,Geneva
+}
+H1 {
+	FONT-SIZE: 17px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+H2 {
+	FONT-SIZE: 16px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+H3 {
+	FONT-SIZE: 15px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+H4 {
+	FONT-SIZE: 13px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+H5 {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+A:link {
+	COLOR: #000080; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+A:active {
+	COLOR: #000080; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+A:visited {
+	COLOR: #0000cd; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+A:hover {
+	COLOR: #000000; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+DIV {
+	COLOR: #000000; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+#layer {
+	BORDER-RIGHT: blue 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: blue 1px solid; PADDING-LEFT: 4px; BACKGROUND: #ffffee; PADDING-BOTTOM: 4px; BORDER-LEFT: blue 1px solid; PADDING-TOP: 4px; BORDER-BOTTOM: blue 1px solid
+}
+.capital {
+	BORDER-RIGHT: blue 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: blue 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 100%; BACKGROUND: #ffffee; PADDING-BOTTOM: 4px; BORDER-LEFT: blue 1px solid; COLOR: red; PADDING-TOP: 4px; BORDER-BOTTOM: blue 1px solid
+}
+TEXTAREA {
+	BORDER-RIGHT: #cccccc 1pt solid; BORDER-TOP: #cccccc 1pt solid; FONT-SIZE: 11px; BACKGROUND: #ffffff; BORDER-LEFT: #cccccc 1pt solid; COLOR: #222222; BORDER-BOTTOM: #cccccc 1pt solid; FONT-FAMILY: Verdana, Tahoma
+}
+INPUT {
+	BORDER-RIGHT: #cccccc 1pt solid; BORDER-TOP: #cccccc 1pt solid; FONT-SIZE: 11px; BACKGROUND: #ffffff; BORDER-LEFT: #cccccc 1pt solid; COLOR: #222222; BORDER-BOTTOM: #cccccc 1pt solid; FONT-FAMILY: Verdana, Tahoma
+}
+FORM {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+INPUT {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #dddddd; TEXT-DECORATION: none
+}
+TEXTAREA {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #dddddd; TEXT-DECORATION: none
+}
+SELECT {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #dddddd; TEXT-DECORATION: none
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}

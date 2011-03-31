@@ -1,0 +1,981 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0198)http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&text=Builder&reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&dsn=286&d=1014292 -->
+<HTML><HEAD><TITLE>Статьи. TClientSocket & <TServerSocket> в C++ <Builder></TITLE><LINK 
+href="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/my.css" 
+type=text/css rel=stylesheet>
+<META http-equiv=Keywords 
+content="хостинг, программа, компьютеры, интернет, каталог, программирование, ресурс, форум, статья, лекции, урок, учебник, delphi, c, visual, vc, c++, builder, basic, бэйсик, php, скрипт, Perl, html, javascript, база данных, russian, freeware, литература, borland, pascal, microsoft, windows, winxp, советы, помощь, реферат, группа, работа, пример, компоненты, components, free, информационные технологии, форматы, файл, file, tutorial, programming, FAQ, Service, faqs, script, help, struct, dos, windows, editor, java, rich, edit, vba, internet, technologies, tutorial, net, club, blackman, новости, юмор" 
+name=Keywords>
+<META content=INDEX,FOLLOW name=robots>
+<META content="1 days" name=revisit-after><LINK 
+href="http://articles.org.ru/favicon.ico" rel="SHORTCUT ICON">
+<META http-equiv=content-style-type content=text/css>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META http-equiv=Pragma content=no-cache>
+<META http-equiv=Cache-control content=private>
+<META http-equiv=Expires content=0>
+<SCRIPT language=JavaScript>
+ <!-- 
+ { 
+ if (self.parent.frames.length != 0) 
+ self.parent.location="http://articles.org.ru"
+ } 
+ // --> 
+ </SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY text=#330000 vLink=#ff9900 aLink=#ff0000 link=#006600 bgColor=#efefef 
+leftMargin=0 topMargin=0><A name=YANDEX_TOP></A>
+<SCRIPT>var loc='http://articles.org.ru/cfaq/index.php?qid=1606&catid=64';</SCRIPT>
+
+<SCRIPT 
+src="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/hl-counter.js"></SCRIPT>
+
+<TABLE style="BACKGROUND-COLOR: #8b8e95" cellSpacing=7 cellPadding=10 
+width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: white">
+      <DIV 
+      style="FONT-WEIGHT: normal; FONT-SIZE: 13px; PADDING-BOTTOM: 10px; COLOR: #333333; FONT-FAMILY: Arial"><A 
+      style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #0000cc; FONT-FAMILY: Arial; BACKGROUND-COLOR: white; TEXT-DECORATION: underline" 
+      href="http://articles.org.ru/cfaq/index.php?qid=1606&amp;catid=64">http://articles.org.ru/cfaq/index.php?qid=1606&amp;catid=64</A>&nbsp;·&nbsp;<A 
+      style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #333333; FONT-FAMILY: Arial; TEXT-DECORATION: underline" 
+      href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292&amp;isu=1">Cохраненная 
+      копия</A></DIV>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD style="BACKGROUND-COLOR: white"><B 
+            style="FONT-SIZE: 13px; COLOR: black; FONT-FAMILY: Arial">Слова:&nbsp;</B></TD>
+          <TD style="BACKGROUND-COLOR: white" width="60%"><SPAN 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffcc00">&nbsp;<A 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffcc00" 
+            href="http://www.yandex.ru/yandsearch?text=Builder">Builder</A>&nbsp;</SPAN>
+            <DIV 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; PADDING-TOP: 10px; BACKGROUND-COLOR: white"><A 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #333333; FONT-FAMILY: Arial; TEXT-DECORATION: underline" 
+            href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_0">к 
+            первому</A> | <A 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #333333; FONT-FAMILY: Arial; TEXT-DECORATION: underline" 
+            href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_LAST">к 
+            последнему</A></DIV></TD>
+          <TD style="BACKGROUND-COLOR: white" vAlign=bottom width="39%">
+            <DIV 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 11px; MARGIN-LEFT: 40px; COLOR: black; TEXT-INDENT: -19px; FONT-FAMILY: Arial"><IMG 
+            style="VERTICAL-ALIGN: bottom" height=13 
+            src="http://www.yandex.ru/i/i-warning.gif" width=19>Яндекс никак не 
+            связан с авторами и содержимым 
+        страницы&nbsp;&nbsp;</DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE height=20 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><BR></TD></TR></TBODY></TABLE>
+<DIV>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><!-- NON-YANDEX HTML STARTED-->
+      <SCRIPT>
+nN=navigator.appName
+nV=navigator.appVersion
+function fsearch(str){
+if (document.fform.myradio[0].checked){
+if (nN=='Netscape') {
+if (nV.match(/.*X11.*/)){
+open('http://yandex.ru:8080/yandsearch?text='+escape(str)+'&serverurl='+document.location.hostname+'/&');
+}
+else 
+open('http://yandex.ru/yandsearch?text='+escape(str)+'&serverurl='+document.location.hostname+'/&');
+}
+else 
+if (nN=='Microsoft Internet Explorer') {
+open('http://yandex.ru/yandsearch?text='+str+'&serverurl='+document.location.hostname+'/');
+}
+}
+else
+{
+if (nN=='Netscape') {
+if (nV.match(/.*X11.*/)){
+open('http://yandex.ru:8080/yandsearch?text='+escape(str));
+}
+else 
+open('http://yandex.ru/yandsearch?text='+escape(str));
+}
+else 
+if (nN=='Microsoft Internet Explorer') {
+open('http://yandex.ru/yandsearch?text='+str);
+}
+}
+}
+
+function MouseUpHandler(e) {
+if (nN=='Netscape') {
+if (document.getSelection()){
+if(frames.length){
+var i;
+for(i=0;i<length;i++){
+str=frames[i].document.getSelection(); 
+if(str){
+break;
+}
+}
+}
+else{
+str=document.getSelection();
+}
+newstr=str.replace(/\n+/g,' ');
+str=newstr.replace(/\ +/g,' ');
+if(str.length > 100){
+var i;
+i=0;
+str=str.slice(0,100);
+i=str.lastIndexOf(' ');
+
+if (i>0){
+str=str.slice(0,i);
+} 
+}
+document.fform.strf.value=str;
+}
+}
+else 
+if (nN=='Microsoft Internet Explorer') { 
+if (document.selection.createRange()){
+var range = document.selection.createRange();
+var str = range.text;
+}
+if (str){
+str=str.replace(/\ +/g, " ");
+document.fform.strf.value=str;
+}
+}
+return true;
+}
+if (window.Event)
+document.captureEvents(Event.MOUSEUP);
+document.onmouseup = MouseUpHandler;
+</SCRIPT>
+      <A name=bvtop></A>
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" align=center border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD align=middle 
+          background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/window_bg.png" 
+          bgColor=#dddddd colSpan=3 height=23><IMG height=3 
+            src="/images/top.png" width=800 align=center valign="top"><BR><A 
+            href="http://articles.org.ru/gop.php"><IMG height=1 
+            src="/images/none.gif" width=1 align=center border=0 
+            valign="top"></A>&nbsp;<A href="http://articles.org.ru/forum/"><IMG 
+            height=16 alt="Форумы сайта" src="/favicon.ico" width=16 
+            align=center border=0 valign="top"></A>&nbsp;<B><FONT 
+            color=#0000ff>Курс борьбы с программированием, windows и web 
+            (Программирование. Windows. Статьи. Исходники. Скрипты. 
+            Юмор)</FONT></B> </TD></TR>
+        <TR vAlign=center>
+          <TD align=middle bgColor=#dddddd colSpan=3 height=46>
+            <TABLE borderColor=#dddddd cellSpacing=0 cellPadding=0 width="80%" 
+            align=center border=0 valign="middle">
+              <TBODY>
+              <TR vAlign=center>
+                <TD rowSpan=2><A href="http://articles.org.ru/index.php" 
+                  target=_blank><IMG height=31 
+                  alt="Карта сайта. Откроется в новом окне " src="/mybanner.gif" 
+                  width=88 align=center border=0></A></TD>
+                <TD rowSpan=2><B><A 
+                  href="http://articles.org.ru/index.php"><IMG height=15 
+                  src="/images/bullet.png" width=16 align=center 
+                  border=0>Карта&nbsp;сайта</A></B></TD>
+                <TD><B><A href="http://articles.org.ru/news.php"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Новости</A></B></TD>
+                <TD><B><A href="http://articles.org.ru/cfaq/index.php"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Статьи</A></B></TD>
+                <TD><B><A href="http://articles.org.ru/primer/primer.php"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Исходники</A></B></TD>
+                <TD><B><A href="http://articles.org.ru/cn/?c=32"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Программы</A></B></TD>
+                <TD><B><A 
+                  href="http://articles.org.ru/cfaq/index.php?catid=79"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Юмор</A></B></TD>
+                <TD><B><A href="http://articles.org.ru/slov/index.php"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Словарь</A></B></TD></TR>
+              <TR vAlign=center>
+                <TD><B><A href="http://articles.org.ru/forum/"><IMG height=15 
+                  src="/images/bullet.png" width=16 align=center 
+                  border=0>Форум</A></B></TD>
+                <TD><B><A href="http://articles.org.ru/cn/index.php"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Каталог</A></B></TD>
+                <TD><B><A href="http://articles.org.ru/cn/?c=12"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Компоненты</A></B></TD>
+                <TD><B><A 
+                  href="http://articles.org.ru/cn/?c=56&amp;o=3&amp;start=0"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Скрипты</A></B></TD>
+                <TD><B><A href="http://articles.org.ru/docum/docum.php"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Архив</A></B></TD>
+                <TD><B><A href="http://articles.org.ru/newsinet.php"><IMG 
+                  height=15 src="/images/bullet.png" width=16 align=center 
+                  border=0>Новости&nbsp;инета</A></B></TD></TR></TBODY></TABLE></TD></TR>
+        <TR vAlign=top height=23>
+          <TD align=middle 
+          background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/window_bg.png" 
+          bgColor=#dddddd colSpan=3 height=23>
+            <TABLE cellSpacing=1 cellPadding=0 width="80%" align=left border=0 
+            valign="top">
+              <TBODY>
+              <TR vAlign=absmiddle align=left height=23>
+                <TD vAlign=center align=left height=23><IMG height=15 
+                  src="/images/bullet.png" width=15 align=absMiddle border=0> 
+</TD>
+                <TD vAlign=center 
+                  height=23><B>Поиск&nbsp;на&nbsp;сайте:&nbsp;</B> </TD>
+                <TD vAlign=center align=left height=23>
+                  <FORM action=http://www.google.com/search method=get 
+                  target==_self><INPUT type=hidden value=windows-1251 
+                  name=ie><INPUT size=15 name=as_q><INPUT type=radio CHECKED 
+                  value=articles.org.ru name=as_sitesearch>Сайт<INPUT type=radio 
+                  value="" name=as_sitesearch>Google<INPUT type=submit value=Поиск name=Submit></FORM></TD>
+                <TD>&nbsp;</TD>
+                <TD vAlign=center align=left height=23>
+                  <FORM name=Search action=http://search.rambler.ru/srch 
+                  method=get target=_blank valign="top"><INPUT type=hidden 
+                  value=1 name=where><INPUT size=15 name=words><SELECT 
+                  name=filter><OPTION value="">Rambler<OPTION 
+                    value=articles.org.ru selected>сайт</OPTION></SELECT>Rambler<INPUT type=submit value=Найти name=submit></FORM></TD>
+                <TD>&nbsp;</TD>
+                <TD vAlign=center align=left height=23>
+                  <FORM name=fform onsubmit=fsearch(strf.value) method=get 
+                  valign="top"><INPUT size=15 name=strf><INPUT type=radio 
+                  CHECKED value=0 name=myradio>Сайт<INPUT type=radio value=1 
+                  name=myradio>Яndex<INPUT type=submit value=Найти></FORM></TD></TR></TBODY></TABLE></TD></TR>
+        <TR vAlign=top align=middle>
+          <TD vAlign=top align=middle width=170 
+          background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/bgl.jpg" 
+          bgColor=#dddddd><IMG src="/images/bgl.jpg" width=170 align=center 
+            valign="top"><BR>
+            <TABLE cellSpacing=1 cellPadding=1 width=170 align=center border=0 
+            valign="top">
+              <TBODY>
+              <TR align=left>
+                <TD>
+                  <TABLE width="100%" align=left>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top align=left 
+                      background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/tablebg.png" 
+                      bgColor=#dddddd><A 
+                        href="http://articles.org.ru/cfaq/index.php"><IMG 
+                        src="/images/bullet.png" align=absMiddle 
+                        border=0><B>Статьи: </B></A></TD>
+                    <TR>
+                      <TD align=left><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=64"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>C/VC/C++/C#</A><BR>Программирование на С<BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=25"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>DELPHI FAQ (структурирован по темам)</A><BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=84"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>DELPHI FAQ (неупорядочен по темам)</A><BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=96"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>DELPHI Лекции, уроки</A><BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=20"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>Windows</A><BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=15"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>HTML.CSS.SSI.JavaScript</A><BR>WEB 
+                        программирование<BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=14"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>PHP и MySql</A><BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=54"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>Базы данных</A><BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=102"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>Железо</A><BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=76"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>Сети.Интернет</A><BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=24"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>Разное</A><BR><A 
+                        href="http://articles.org.ru/cfaq/index.php?catid=79"><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0>Юмор</A></TD></TR></TBODY></TABLE></TD></TR>
+              <TR align=left>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top align=left 
+                      background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/tablebg.png" 
+                      bgColor=#dddddd colSpan=2><A 
+                        href="http://articles.org.ru/cn/index.php"><IMG 
+                        height=15 src="/images/bullet.png" width=16 
+                        border=0><B>Каталог:</B></A> </TD></TR>
+                    <TR>
+                      <TD vAlign=top><A 
+                        href="http://articles.org.ru/cn/index.php?c=1"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Delphi</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=3"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Basic</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=45"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Ассемблер</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=31"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Windows</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=6"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>PHP</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=7"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Web.CSS</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=5"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>JavaScript</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=41"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Хостинг</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=33"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Каталоги</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=34"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Форумы</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=46"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Культура</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=43"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Игры</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=28"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Разные</A> </TD>
+                      <TD vAlign=top><A 
+                        href="http://articles.org.ru/cn/index.php?c=2"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>C/C++</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=4"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>FoxPro</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=38"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>WinApi</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=39"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Алгоритмы</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=42"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Форматы</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=32"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Программы</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=8"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Базы</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=40"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Сети</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=30"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Железо</A> <BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=35"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Комп.док.</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=36"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Новости</A><BR><A 
+                        href="http://articles.org.ru/cn/index.php?c=9"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Юмор</A> 
+              </TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0 
+                  valign="top">
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top align=left 
+                      background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/tablebg.png" 
+                      bgColor=#dddddd><A 
+                        href="http://articles.org.ru/forum/index.php"><IMG 
+                        src="/images/bullet.png" align=absMiddle 
+                        border=0><B>Форум: </B></A></TD></TR>
+                    <TR>
+                      <TD align=left><A 
+                        href="http://articles.org.ru/forum/index.php?showforum=1"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>DELPHI</A><BR><A 
+                        href="http://articles.org.ru/forum/index.php?showforum=2"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>WEB</A><BR><A 
+                        href="http://articles.org.ru/forum/index.php?showforum=11"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Алгоритмы</A><BR><A 
+                        href="http://articles.org.ru/forum/index.php?showforum=6"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Прочие</A><BR><A 
+                        href="http://articles.org.ru/forum/index.php?showforum=3"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Новости сайта</A><BR><A 
+                        href="http://articles.org.ru/forum/index.php?showforum=7"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>О публикациях</A><BR><A 
+                        href="http://articles.org.ru/forum/index.php?showforum=10"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Windows</A><BR><A 
+                        href="http://articles.org.ru/forum/index.php?showforum=8"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Программы</A><BR><A 
+                        href="http://articles.org.ru/forum/index.php?showforum=5"><IMG 
+                        height=16 hspace=1 src="/favicon.ico" width=16 
+                        align=absMiddle border=0>Флейм</A> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=1 cellPadding=1 width=170 align=center border=0 
+            valign="top">
+              <TBODY>
+              <TR align=left>
+                <TD>
+                  <TABLE align=left border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top align=left 
+                      background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/tablebg.png"><A 
+                        href="http://articles.org.ru/cfaq/index.php"><IMG 
+                        src="/new.gif" align=absMiddle border=0><B>Новые 
+                        статьи</B></A></TD></TR>
+                    <TR>
+                      <TD><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=2357&amp;frommostrecent=yes">Расшифровка 
+                        кодов системных событий Windows</A> (09/08/06) 
+                        (49)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=2354&amp;frommostrecent=yes">Немного 
+                        относительно методов упаковки данных</A> (07/08/06) 
+                        (51)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=2355&amp;frommostrecent=yes">Издевательства 
+                        над десктопом</A> (07/08/06) (72)<BR><IMG height=16 
+                        src="/favicon.ico" width=16 align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=2353&amp;frommostrecent=yes">Порция 
+                        анекдотов #34</A> (06/08/06) (80)<BR><IMG height=16 
+                        src="/favicon.ico" width=16 align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=2351&amp;frommostrecent=yes">Безопасность 
+                        интернет-приложений</A> (05/08/06) 
+                  (59)<BR></TD></TR></TBODY></TABLE><BR></TD></TR>
+              <TR align=left>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" align=left 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD 
+                      background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/tablebg.png"><B><A 
+                        href="http://articles.org.ru/cn/index.php"><IMG 
+                        alt="Каталог программиста" src="/new.gif" 
+                        align=absMiddle border=0>Новые ссылки</A></B></TD></TR>
+                    <TR>
+                      <TD><A href="http://articles.org.ru/cn/jump.php?3666" 
+                        target=_blank><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0>zaycev.net</A> Популярные mp3 ТУТ 
+                        ЗАЙЦЕВ НЕТ! Здес...<BR clear=all><A 
+                        href="http://articles.org.ru/cn/jump.php?3665" 
+                        target=_blank><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0>Русская портальная система 
+                        WCPS</A> WebCodePortalSystem - русская порта...<BR 
+                        clear=all><A 
+                        href="http://articles.org.ru/cn/jump.php?3664" 
+                        target=_blank><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0>Mon Day - понедельник</A> Юмор 
+                        Анекдоты Истории Множество пол...<BR 
+                    clear=all></TD></TR></TBODY></TABLE><BR></TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=top align=left width="75%" bgColor=#eeeeee>
+            <TABLE cellSpacing=0 cellPadding=0 width="98%" align=center border=0 
+            valign="top">
+              <TBODY>
+              <TR vAlign=top>
+                <TD align=left>
+                  <P align=center><A 
+                  href="http://articles.org.ru/cfaq/index.php">Домой</A> &gt; <A 
+                  href="http://articles.org.ru/cfaq/index.php?catid=64">C/VC/C#</A></P>
+                  <P align=center><A 
+                  href="http://articles.org.ru/cfaq/index.php?runsearch=start">[ 
+                  Поиск в статьях ]</A> [ <A 
+                  href="javascript:history.back(1)">Предыдущая страница</A> 
+]</P>
+                  <P><STRONG>TClientSocket &amp; <A 
+                  name=YANDEX_0></A>&nbsp;<SPAN 
+                  style="FONT-WEIGHT: bold; COLOR: black; BACKGROUND-COLOR: #ffcc00">&nbsp;TServerSocket&nbsp;</SPAN><A 
+                  href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_1"><IMG 
+                  height=11 alt=">" src="http://www.yandex.ru/y-rt.gif" width=16 
+                  align=absMiddle border=0></A></NOBR> в C++ <A 
+                  name=YANDEX_1></A><NOBR><A 
+                  href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_0"><IMG 
+                  height=11 alt="<" src="http://www.yandex.ru/y-lf.gif" width=16 
+                  align=absMiddle border=0></A><SPAN 
+                  style="FONT-WEIGHT: bold; COLOR: black; BACKGROUND-COLOR: #ffcc00">&nbsp;Builder&nbsp;</SPAN><A 
+                  href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_2"><IMG 
+                  height=11 alt=">" src="http://www.yandex.ru/y-rt.gif" width=16 
+                  align=absMiddle border=0></A></NOBR></STRONG></P>
+                  <BLOCKQUOTE>В c++<A name=YANDEX_2></A><NOBR><A 
+                    href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_1"><IMG 
+                    height=11 alt="<" src="http://www.yandex.ru/y-lf.gif" 
+                    width=16 align=absMiddle border=0></A><SPAN 
+                    style="FONT-WEIGHT: bold; COLOR: black; BACKGROUND-COLOR: #ffcc00">&nbsp;builder&nbsp;</SPAN><A 
+                    href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_3"><IMG 
+                    height=11 alt=">" src="http://www.yandex.ru/y-rt.gif" 
+                    width=16 align=absMiddle border=0></A></NOBR> 6 для передачи 
+                    какой-либо информации по сети удобнее всего использовать 
+                    компоненты закладки internet: tclientsocket и <A 
+                    name=YANDEX_3></A><NOBR><A 
+                    href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_2"><IMG 
+                    height=11 alt="<" src="http://www.yandex.ru/y-lf.gif" 
+                    width=16 align=absMiddle border=0></A><SPAN 
+                    style="FONT-WEIGHT: bold; COLOR: black; BACKGROUND-COLOR: #ffcc00">&nbsp;tserversocket&nbsp;</SPAN><A 
+                    href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_4"><IMG 
+                    height=11 alt=">" src="http://www.yandex.ru/y-rt.gif" 
+                    width=16 align=absMiddle border=0></A></NOBR>. <BR><BR>Чтобы 
+                    лучше разобраться в работе этих компонентов я предлагаю 
+                    написать простенький сетевой чат, на примере которого можно 
+                    будет легко увидеть компоненты в действии. <BR><BR>Для 
+                    начала создадим новый проект(file-&gt;new-&gt;application), 
+                    поместим на форму компоненты: <BR><BR>tclientsocket и <A 
+                    name=YANDEX_4></A><NOBR><A 
+                    href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_3"><IMG 
+                    height=11 alt="<" src="http://www.yandex.ru/y-lf.gif" 
+                    width=16 align=absMiddle border=0></A><SPAN 
+                    style="FONT-WEIGHT: bold; COLOR: black; BACKGROUND-COLOR: #ffcc00">&nbsp;tserversocket&nbsp;</SPAN><A 
+                    href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_5"><IMG 
+                    height=11 alt=">" src="http://www.yandex.ru/y-rt.gif" 
+                    width=16 align=absMiddle border=0></A></NOBR> , чтобы наша 
+                    программа могла быть и клиентом и сервером (не одновременно 
+                    конечно ;) ). <BR><BR>Далее разместим компонент tmemo 
+                    (закладка standart) - в нем как вы догадались будет 
+                    отображаться текст чата. <BR><BR>Следующим на форму нужно 
+                    кинуть компонент tedit (standart) - в него мы будем писать 
+                    текcт, который нужно отправить собеседнику. <BR><BR>Ну и 
+                    конечно тяжело обойтись без кнопки отправить - кидаем на 
+                    форму tbutton . Кроме того что уже есть на форме, нам еще 
+                    понадобится три кнопки и два эдита (tedit) (их назначение 
+                    описывается по ходу обращения к ним) . <BR><BR>Итак, на 
+                    форме : <BR><BR>clientsocket1 и 
+                    serversocket1<BR>memo1<BR>edit1,edit2,edit3<BR>button1,button2,button3,button4<BR>Теперь 
+                    изменяем свойства: <BR><BR>button1-&gt;caption на 
+                    "Отправить"<BR>button2-&gt;caption на 
+                    "Создать"<BR>button3-&gt;caption на "Соединиться" 
+                    и<BR>button4-&gt;caption на "Отключить" .<BR>Убираем текст 
+                    во всех Эдитах . Свойство memo1-&gt;readonly = true , 
+                    <BR><BR>clientsocket1-&gt;host - нужно написать ip-адрес 
+                    сервера к которому вы будете присоеденяться 
+                    <BR><BR>(ip-адресс устанавливается в настройках соединения 
+                    windows), если прописать 127.0.0.1 , то вы будете 
+                    конектиться к себе на компьютер (так удобно делать, когда 
+                    проверяешь на работоспособность свою программу. Запустив ее 
+                    дважды, одна клиент с 127.0.0.1 , а другая сервер !) если же 
+                    вы коннектитесь к другу, то заранее договоритесь какой будет 
+                    Ай-Пи-адрес (143.0.0.5 - например). Но для того чтобы Ай-Пи 
+                    -адресс можно было легко сменить, мы и положили на форму 
+                    один из Эдитов, его текст при коннекте и будет отвечать 
+                    свойству clientsocket1-&gt;host и clientsocket1-&gt;address 
+                    . <BR><BR>В свойстве clientsocket1-&gt;port и 
+                    servertsocket1-&gt;port - должны стоять одинаковые значения, 
+                    чтобы Сервер и Клиент прослушивали и работали на один порт . 
+                    Число можно выбрать любое (1024 например). <BR><BR>Кнопку 
+                    "Отключиться" изначально нужно сделать недоступной(enabled = 
+                    false)так как вначале отсоеденяться нам нет от кого . 
+                    <BR><BR>Дальше опишем обработчики событий для кнопок 
+                    "Создать", "Соединиться", "Отключить" . <BR><BR>Кнопка 
+                    "Создать" - активизирует сервер. Он начинает прослушивать 
+                    порт на коннект со стороны клиента . <BR><BR>void __fastcall 
+                    t<B>form</B>1::button2click(tobject 
+                    *s<B>end</B>er)<BR>{<BR>serversocket1-&gt;active = true 
+                    ;<BR>// Делаем недоступную "Соединиться" (так как мы уже 
+                    сервер)<BR>button3-&gt;enabled = false<BR>// Делаем 
+                    доступную "Отключиться" (понятно 
+                    зачем)<BR>button4-&gt;enabled = 
+                    true<BR>memo1-&gt;lines-&gt;add("Сервер создан") 
+                    ;<BR>}<BR>Так наша программа стала сервером ! 
+                    <BR><BR>Давайте опишем клиента!(Кнопка "Соединиться") 
+                    <BR><BR>В edit3-&gt;text впишите 127.0.0.1 - предполагается 
+                    что тестироваться будет на одном компьютере (что б других не 
+                    заморачивать:) <BR><BR>void __fastcall 
+                    t<B>form</B>1::button3click(tobject 
+                    *s<B>end</B>er)<BR>{<BR>edit3-&gt;text = 
+                    clientsocket1-&gt;host // Присваиваем Клиенту Ай-Пи из 
+                    Эдита<BR>edit3-&gt;text = 
+                    clientsocket1-&gt;address<BR>serversocket1-&gt;active = true 
+                    ;<BR>// Делаем недоступную "Создать" (так как мы 
+                    коннектимся)<BR>button2-&gt;enabled = false<BR>// Делаем 
+                    доступную "Отключиться" (понятно 
+                    зачем)<BR>button4-&gt;enabled = true<BR>}<BR>Вот Вы и 
+                    написали тот минимум который надо для освоения компонентов ! 
+                    <BR><BR>Но кто хочет останавливаться ? А чат доделать ! 
+                    Правильно пишем дальше: <BR><BR>Дальше будем описывать 
+                    свойства компонентов Клиента и Сервера onconnect (когда 
+                    присоединился) . <BR><BR>void __fastcall 
+                    t<B>form</B>1::serversocket1clientconnect(tobject 
+                    *s<B>end</B>er,<BR>tcustomwinsocket 
+                    *socket)<BR>{<BR>memo1-&gt;lines-&gt;add("Клиент 
+                    присоединился");<BR>}<BR>Это когда вы сервер и к Вам 
+                    присоединились, на Мемо появится надпись ! <BR><BR>Для 
+                    клиента почти так само : <BR><BR>void __fastcall 
+                    t<B>form</B>1::clientsocket1connect(tobject 
+                    *s<B>end</B>er,<BR>tcustomwinsocket 
+                    *socket)<BR>{<BR>memo1-&gt;lines-&gt;add("Вы 
+                    присоединены");<BR>}<BR>Понятно, да ? Отлично , дальше 
+                    остается только рассказать Вам зачем edit2 на форме и 
+                    описать кнопку "Отправить" . <BR><BR>Итак, Эдит2 нам нужен 
+                    для Вашего ника ! Ведь какой чат без ника ! <BR><BR>Теперь 
+                    самое главное - описание кнопки "Отправить : 
+                    <BR><BR>if(edit2-&gt;text == "")<BR>showmessage("Введите Ваш 
+                    ник !");<BR>return ;<BR>}<BR>if(edit1-&gt;text == 
+                    "")<BR>{<BR>showmessage("Введите текст который надо 
+                    отправить");<BR>return ;<BR>}<BR>//Это была обработка 
+                    исключительных ситуаций , типа пустых строк ввода 
+                    ;<BR>memo1-&gt;lines-&gt;add(edit2-&gt;text+":: "+ 
+                    edit1-&gt;text) ;<BR><B>if </B>(serversocket1-&gt;active == 
+                    true) 
+                    {<BR>serversocket1-&gt;socket-&gt;connections[0]-&gt;<BR>s<B>end</B>text(edit2-&gt;text+"::"+edit1-&gt;text); 
+                    }<BR><B>else</B><BR>{ 
+                    clientsocket1-&gt;socket-&gt;s<B>end</B>text(edit2-&gt;text+"::"+edit1-&gt;text);}<BR>edit1-&gt;text 
+                    = "" ;<BR>}<BR>Теперь разберемся с этой кучей кода : 
+                    <BR><BR>//добавляем свое сообщение себе в 
+                    Мемо<BR>memo1-&gt;lines-&gt;add(edit2-&gt;text+":: "+ 
+                    edit1-&gt;text) ;<BR><B>if </B>(serversocket1-&gt;active == 
+                    true){serversocket1-&gt;socket-&gt;<BR>connections[0]-&gt;s<B>end</B>text(edit2-&gt;text+"::"+edit1-&gt;text)};<BR>Если 
+                    мы сервер, то посылаем нашу строку первому в списке клиенту 
+                    ( чат розщитан на двоих ) , иначе : <BR><BR><B>else</B> 
+                    {<BR>clientsocket1-&gt;socket-&gt;s<B>end</B>text(edit2-&gt;text+"::"+edit1-&gt;text);<BR>}<BR>Посылаем 
+                    строку серверу ! <BR><BR>Независимо от того кто мы 
+                    (клиент-сервер) <BR><BR>Очищаем Эдит1 : 
+                    <BR><BR>edit1-&gt;text = "" ;<BR>Также надо описать прием 
+                    информации и занесение ее в Мемо1. Делается это обработчиком 
+                    события onread у tclientsocket и <A 
+                    name=YANDEX_5></A><NOBR><A 
+                    href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_4"><IMG 
+                    height=11 alt="<" src="http://www.yandex.ru/y-lf.gif" 
+                    width=16 align=absMiddle border=0></A><SPAN 
+                    style="FONT-WEIGHT: bold; COLOR: black; BACKGROUND-COLOR: #ffcc00">&nbsp;tserversocket&nbsp;</SPAN><A 
+                    href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_6"><IMG 
+                    height=11 alt=">" src="http://www.yandex.ru/y-rt.gif" 
+                    width=16 align=absMiddle border=0></A></NOBR> : <BR><BR>void 
+                    __fastcall t<B>form</B>1::clientsocket1read(tobject 
+                    *s<B>end</B>er,<BR>tcustomwinsocket 
+                    *socket)<BR>{<BR>memo1-&gt;lines-&gt;add(socket-&gt;receivetext()) 
+                    ;<BR>}<BR>void __fastcall 
+                    t<B>form</B>1::serversocket1clientread(tobject 
+                    *s<B>end</B>er,<BR>tcustomwinsocket 
+                    *socket)<BR>{<BR>memo1-&gt;lines-&gt;add(socket-&gt;receivetext()) 
+                    ;<BR>}<BR>Вот вроди бы и все. С tclientsocket и <A 
+                    name=YANDEX_6></A><NOBR><A 
+                    href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_5"><IMG 
+                    height=11 alt="<" src="http://www.yandex.ru/y-lf.gif" 
+                    width=16 align=absMiddle border=0></A><SPAN 
+                    style="FONT-WEIGHT: bold; COLOR: black; BACKGROUND-COLOR: #ffcc00">&nbsp;tserversocket&nbsp;</SPAN><A 
+                    name=YANDEX_LAST></A></NOBR> разобрались , а кого 
+                    заинтересовала тема чата, заходите в раздел "Мои программы" 
+                    И качайте доделанную мной, с большим количеством настроек 
+                    программу вместе с исходниками<BR><BR>Автор: Макагон 
+                    Сергей<BR>http://cppbuilder.hotbox.ru</BLOCKQUOTE>
+                  <DIV align=right><I>Добавлено: 09/12/05 Просмотров: 
+                  697</I></DIV>
+                  <P align=center>[ <A 
+                  href="javascript:history.back(1)">Предыдущая страница</A> ][ 
+                  <A 
+                  href="http://articles.org.ru/cfaq/index.php?runsearch=start"><B>Поиск 
+                  в статьях</B></A> | <A 
+                  href="http://articles.org.ru/cfaq/index.php">Домой</A> ]</P>
+                  <P 
+                  style="FONT-SIZE: 9px; FONT-FAMILY: Arial, Helvetica, san-serif" 
+                  align=center>This FAQ is powered by <A 
+                  href="http://eclectic-designs.com/cascadianfaq.php" 
+                  target=_blank>CascadianFAQ v4.1</A>, developed by Summer S. 
+                  Wilson at Eclectic Designs.</P></TD></TR></TBODY></TABLE>
+            <HR>
+
+            <CENTER>[&nbsp;<A 
+            href="http://www.articles.org.ru/forum/index.php?showforum=7" 
+            target=blank>Добавить статью или комментарий </A>&nbsp;]</CENTER>
+            <CENTER><I>Публикация статей осуществлятся посетителями сайта. 
+            Администрация не несет ответственности за содержание информации, 
+            размещаемой пользователями ресурса, а также за неправильное указание 
+            авторства, искажение информации и т.п. Если Вы хотите изменить 
+            текст, уточнить авторство или удалить статью, сообщите нам об этом в 
+            <A href="http://www.articles.org.ru/forum/index.php?showforum=7" 
+            target=blank>форуме</A>, указав ее название и URL.</I></CENTER>
+            <HR>
+          </TD>
+          <TD vAlign=top align=middle width=170 
+          background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/bgr.jpg" 
+          bgColor=#dddddd><IMG height=1 src="/images/bgr.jpg" width=170 
+            align=center valign="top"><BR>
+            <TABLE cellSpacing=1 cellPadding=1 width="98%" align=center border=0 
+            valign="top">
+              <TBODY>
+              <TR align=left>
+                <TD>
+                  <TABLE align=left border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top align=left 
+                      background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/tablebg.png"><A 
+                        href="http://articles.org.ru/cfaq/index.php"><IMG 
+                        src="/images/bullet.png" align=absMiddle border=0><B>20 
+                        разных статей</B></A></TD></TR>
+                    <TR>
+                      <TD><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=638&amp;frommostrecent=yes">Как 
+                        поменять местами байты в переменной Word</A> (14/03/05) 
+                        (1639)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=1266&amp;frommostrecent=yes">Как 
+                        подсчитать количество файлов в папке?</A> (20/05/05) 
+                        (472)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=1652&amp;frommostrecent=yes">Загрузка 
+                        и анализ документа XML</A> (22/12/05) (661)<BR><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=75&amp;frommostrecent=yes">Переменные 
+                        CGI окружения. | Environment variables.</A> (22/03/04) 
+                        (1874)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=1887&amp;frommostrecent=yes">Как 
+                        использовать Javascript файл из ресурсов</A> (17/02/06) 
+                        (231)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=693&amp;frommostrecent=yes">РНР 
+                        и динамическое создание страниц</A> (19/03/05) 
+                        (2017)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=1988&amp;frommostrecent=yes">Как 
+                        подружить буфер обмена с UNICODE</A> (16/03/06) 
+                        (172)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=1467&amp;frommostrecent=yes">Идеальный 
+                        и реальный день из жизни мужчины</A> (11/11/05) 
+                        (661)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=1214&amp;frommostrecent=yes">Как 
+                        отловить нажатия клавиш для всех процессов в 
+                        системе?</A> (16/05/05) (646)<BR><IMG height=16 
+                        src="/favicon.ico" width=16 align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=2236&amp;frommostrecent=yes">100 
+                        команд для XP</A> (23/05/06) (676)<BR><IMG height=16 
+                        src="/favicon.ico" width=16 align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=1913&amp;frommostrecent=yes">Записать 
+                        данные в порт принтера</A> (23/02/06) (704)<BR><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=1106&amp;frommostrecent=yes">Поток 
+                        - отдельная ветвь выполнения программы на VС</A> 
+                        (09/05/05) (661)<BR><IMG height=16 src="/favicon.ico" 
+                        width=16 align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=2161&amp;frommostrecent=yes">OpenGL 
+                        - что дальше?</A> (03/05/06) (645)<BR><IMG height=16 
+                        src="/favicon.ico" width=16 align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=602&amp;frommostrecent=yes">Сжатие 
+                        данных на PHP</A> (09/03/05) (1933)<BR><IMG height=16 
+                        src="/favicon.ico" width=16 align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=1876&amp;frommostrecent=yes">Конвертор 
+                        кирилличного текста в Unicode на PHP</A> (14/02/06) 
+                        (274)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=39&amp;frommostrecent=yes">Работа 
+                        с массивами в PHP</A> (22/03/04) (2034)<BR><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=670&amp;frommostrecent=yes">Читаем 
+                        из файла, открытого другим приложением</A> (17/03/05) 
+                        (1652)<BR><IMG height=16 src="/favicon.ico" width=16 
+                        align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=512&amp;frommostrecent=yes">Создание 
+                        редактора свойства</A> (22/02/05) (1690)<BR><IMG 
+                        height=16 src="/favicon.ico" width=16 align=center 
+                        border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=2051&amp;frommostrecent=yes">Общество 
+                        охотников</A> (02/04/06) (132)<BR><IMG height=16 
+                        src="/favicon.ico" width=16 align=center border=0><A 
+                        href="http://articles.org.ru/cfaq/index.php?qid=843&amp;frommostrecent=yes">BORLAND 
+                        DELPHI: Базы данных на DELPHI – BDE</A> (08/04/05) 
+                        (676)<BR></TD></TR></TBODY></TABLE><BR></TD></TR></TBODY></TABLE></TD></TR>
+        <TR vAlign=center>
+          <TD vAlign=center align=middle 
+          background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/window_bg.png" 
+          bgColor=#dddddd colSpan=3 higth="88"><A 
+            href="http://articles.org.ru/cfaq/index.php?qid=1606&amp;catid=64#bvtop"><B><IMG 
+            height=15 src="/images/bullet.png" width=16 align=absMiddle 
+            border=0>Начало страницы</B></A>&nbsp;<A 
+            href="javascript:history.back(1)"><B><IMG height=15 
+            src="/images/bullet.png" width=16 align=absMiddle 
+            border=0>Предыдущая страница</B></A> &nbsp;<A 
+            href="http://articles.org.ru/news.php"><B><IMG height=15 
+            src="/images/bullet.png" width=16 align=absMiddle border=0>Новости 
+            сайта</B></A> &nbsp;<A href="http://articles.org.ru/"><B><IMG 
+            height=15 src="/images/bullet.png" width=16 align=absMiddle 
+            border=0>Карта сайта</B></A> &nbsp;<A 
+            href="javascript:window.external.AddFavorite(parent.location,document.title)"><B><IMG 
+            height=15 src="/images/bullet.png" width=16 align=absMiddle 
+            border=0>Добавить в избранное</B></A> &nbsp;<A 
+            href="http://articles.org.ru/forum/"><B><IMG height=15 
+            src="/images/bullet.png" width=16 align=absMiddle 
+            border=0>Форум</B></A> 
+            <HR color=#dddddd higth="1">
+          </TD>
+        <TR align=left>
+        <TR vAlign=top>
+          <TD align=middle 
+          background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/window_bg.png" 
+          bgColor=#dddddd colSpan=3 higth="88"><!--Rating@Mail.ru COUNTEr-->
+            <SCRIPT language=JavaScript type=text/javascript><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></SCRIPT>
+
+            <SCRIPT language=JavaScript1.1 type=text/javascript><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></SCRIPT>
+
+            <SCRIPT language=JavaScript1.2 type=text/javascript><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></SCRIPT>
+
+            <SCRIPT language=JavaScript1.3 
+            type=text/javascript><!--
+js=13//--></SCRIPT>
+
+            <SCRIPT language=JavaScript type=text/javascript><!--
+d.write('<a href="http://top.mail.ru/jump?from=363410"'+' target=_blank><img src="http://db.c8.b5.a0.top.list.ru/counter'+'?id=363410;t=216;js='+js+a+';rand='+Math.random()+'" alt="Рейтинг@Mail.ru"'+' border=0 height=31 width=88/><\/a>')
+if(11<js)d.write('<'+'!-- ')//--></SCRIPT>
+            <NOSCRIPT><A href="http://top.mail.ru/jump?from=363410" 
+            target=_blank><IMG height=31 alt=Рейтинг@Mail.ru 
+            src="http://db.c8.b5.a0.top.list.ru/counter?js=na;id=363410;t=216" 
+            width=88 border=0></A></NOSCRIPT>
+            <SCRIPT language=JavaScript type=text/javascript><!--
+if(11<js)d.write('--'+'>')//--></SCRIPT>
+<!--/COUNTER--> <!--begin of Rambler's Top100 code --><A 
+            href="http://top100.rambler.ru/top100/"><IMG height=1 alt="" 
+            src="http://counter.rambler.ru/top100.cnt?631173" width=1 border=0 
+            target="_blank"></A> <!--end of Top100 code--><!--begin of Top100 logo--><A 
+            href="http://top100.rambler.ru/top100/"><IMG height=31 
+            alt="Rambler's Top100" 
+            src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-gray2.gif" 
+            width=88 border=0></A> <!--end of Top100 logo --><A 
+            href="http://top100borland.com/in.php?who=608" target=_blank><IMG 
+            height=31 alt="Top 100 Borland Sites. Vote for us" src="/88x31b.gif" 
+            width=88 border=0></A> <!--LiveInternet counter-->
+            <SCRIPT language=JavaScript><!--
+document.write('<a href="http://www.liveinternet.ru/click" '+
+'target=_blank><img src="http://counter.yadro.ru/hit?t14.1;r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
+';'+Math.random()+
+'" title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодн\я" '+
+'border=0 width=88 height=31></a>')//--></SCRIPT>
+<!--/LiveInternet--><A href="http://articles.org.ru/cn/jump.php?23" 
+            target=_blank><IMG height=31 
+            alt="Виктор Шендерович. Юмористическая литература" 
+            src="/shender.gif" width=88 border=0></A> <A 
+            href="http://articles.org.ru/cn/jump.php?117" target=_blank><IMG 
+            height=31 alt="НОВАЯ ГАЗЕТА" src="/nov.gif" width=88 border=0></A> 
+            &nbsp;&nbsp; <A href="http://articles.org.ru/gop.php"><IMG height=1 
+            src="/images/none.gif" width=1 border=0></A> </TD></TR></TBODY></TABLE>
+      <HR color=#dddddd>
+
+      <TABLE height=73 cellSpacing=1 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR align=left>
+          <TD>
+            <DIV align=right><A href="http://articles.org.ru/index.php" 
+            target=_blank><IMG height=31 
+            alt="Курс борьбы с программированием, windows и web" 
+            src="/mybanner.gif" width=88 align=middle border=0></A></DIV></TD>
+          <TD vAlign=center>- <B>наша кнопка:</B>&lt;a 
+            href="http://articles.org.ru" target="_blank"&gt;&lt;img 
+            src="http://articles.org.ru/mybanner.gif" width="88" height="31" 
+            border="0" align="center" alt="Курс борьбы с программированием, 
+            windows и web"&gt;&lt;/a&gt; </TD>
+          <TD></TD></TR>
+        <TR align=left>
+          <TD width=160 height=39><A 
+            href="http://russian-48905688338.spampoison.com/"><IMG height=15 
+            src="/sticker.gif" width=80 border=0></A> </TD>
+          <TD vAlign=center height=39>
+            <CENTER>
+            <TABLE align=center border=0>
+              <TBODY>
+              <TR>
+                <TD align=middle width=582 
+                background="Статьи_ TClientSocket &amp; TServerSocket в C++ Builder.files/owl.gif" 
+                height=28>&nbsp;<B> Коллекция живет -2034 день. Начало работы: 
+                  13.1.2001</B> </TD></TR></TBODY></TABLE></CENTER></TD>
+          <TD width=150 height=39>
+            <CENTER><SMALL>[Время вып. 
+      0.0739с]</SMALL></CENTER></TD></TR></TBODY></TABLE><!-- NON-YANDEX HTML FINISHED --></TD></TR></TBODY></TABLE></DIV><A 
+name=YANDEX_BOTTOM></A>
+<TABLE height=20 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><BR></TD></TR></TBODY></TABLE>
+<TABLE style="BACKGROUND-COLOR: #8b8e95" cellSpacing=7 cellPadding=10 
+width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: white">
+      <DIV 
+      style="FONT-WEIGHT: normal; FONT-SIZE: 13px; PADDING-BOTTOM: 10px; COLOR: #333333; FONT-FAMILY: Arial"><A 
+      style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #0000cc; FONT-FAMILY: Arial; BACKGROUND-COLOR: white; TEXT-DECORATION: underline" 
+      href="http://articles.org.ru/cfaq/index.php?qid=1606&amp;catid=64">http://articles.org.ru/cfaq/index.php?qid=1606&amp;catid=64</A>&nbsp;·&nbsp;<A 
+      style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #333333; FONT-FAMILY: Arial; TEXT-DECORATION: underline" 
+      href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292&amp;isu=1">Cохраненная 
+      копия</A></DIV>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD style="BACKGROUND-COLOR: white"><B 
+            style="FONT-SIZE: 13px; COLOR: black; FONT-FAMILY: Arial">Слова:&nbsp;</B></TD>
+          <TD style="BACKGROUND-COLOR: white" width="60%"><SPAN 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffcc00">&nbsp;<A 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffcc00" 
+            href="http://www.yandex.ru/yandsearch?text=Builder">Builder</A>&nbsp;</SPAN>
+            <DIV 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; PADDING-TOP: 10px; BACKGROUND-COLOR: white"><A 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #333333; FONT-FAMILY: Arial; TEXT-DECORATION: underline" 
+            href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_0">к 
+            первому</A> | <A 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #333333; FONT-FAMILY: Arial; TEXT-DECORATION: underline" 
+            href="http://hghltd.yandex.com/yandbtm?url=http%3A//articles.org.ru/cfaq/index.php%3Fqid%3D1606%26catid%3D64&amp;text=Builder&amp;reqtext=TServerSocket%3A%3A1819103916+%26%26+Builder%3A%3A156573&amp;dsn=286&amp;d=1014292#YANDEX_LAST">к 
+            последнему</A></DIV></TD>
+          <TD style="BACKGROUND-COLOR: white" vAlign=bottom width="39%">
+            <DIV 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 11px; MARGIN-LEFT: 40px; COLOR: black; TEXT-INDENT: -19px; FONT-FAMILY: Arial"><IMG 
+            style="VERTICAL-ALIGN: bottom" height=13 
+            src="http://www.yandex.ru/i/i-warning.gif" width=19>Яндекс никак не 
+            связан с авторами и содержимым страницы&nbsp;&nbsp;</DIV></TD></TR>
+        <TR>
+          <TD style="BACKGROUND-COLOR: white" colSpan=3>
+            <DIV 
+            style="FONT-SIZE: 13px; COLOR: black; PADDING-TOP: 10px; FONT-FAMILY: Arial">Слова, 
+            найденные в заголовке, меню или многострочных областях ввода, 
+            выделены угловыми скобками ('&lt;' и 
+      '&gt;').</DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></BODY></HTML>
