@@ -10,6 +10,9 @@
 /Projects/RNInjector/ViewModel/bin
 /Projects/RNInjector/Hackaround/obj
 /Projects/RNInjector/Hackaround/bin
+/Projects/Debug
+/Projects/Release
+/Projects/ipch
 *.vs10x
 *.suo
-/Projects/Debug
+*.svn
