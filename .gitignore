@@ -16,3 +16,11 @@
 *.vs10x
 *.suo
 *.svn
+/Projects/DesuDLL/Release
+/Projects/DesuDLL/Debug
+/Projects/RNCLI/Release
+/Projects/RNCLI/Debug
+/Projects/RNInject/obj
+/Projects/RNInject/bin
+/Projects/PatchYard/obj
+/Projects/PatchYard/bin

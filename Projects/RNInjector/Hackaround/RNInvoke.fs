@@ -9,5 +9,5 @@ open Microsoft.FSharp.Math
 
 module Native =
     [<System.Runtime.InteropServices.DllImport(@"DesuDLL.dll",EntryPoint="add", CharSet=CharSet.Ansi)>]
-    extern int PatchSomething(string, string, uint32, uint8, uint16);
-    //extern int PatchSomething(char*, char*, uint32, uint8, uint16);
+    //extern int PatchSomething(string, string, uint32, uint8, uint16);
+    extern int PatchSomething(char*, char*, uint32, uint8*, uint16);

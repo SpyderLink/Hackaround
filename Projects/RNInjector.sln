@@ -17,6 +17,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PatchYard", "PatchYard\Patc
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RNInject", "RNInject\RNInject.fsproj", "{6B1AE75C-07EC-45CD-BDAD-40798C6EBE7E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RNCLI", "RNCLI\RNCLI.vcxproj", "{6095D3F2-1A74-4831-BABA-EB93A5DE2205}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +127,18 @@ Global
 		{6B1AE75C-07EC-45CD-BDAD-40798C6EBE7E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6B1AE75C-07EC-45CD-BDAD-40798C6EBE7E}.Release|Win32.ActiveCfg = Release|Any CPU
 		{6B1AE75C-07EC-45CD-BDAD-40798C6EBE7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Debug|Win32.Build.0 = Debug|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Debug|x86.ActiveCfg = Debug|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Release|Any CPU.ActiveCfg = Release|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Release|Win32.ActiveCfg = Release|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Release|Win32.Build.0 = Release|Win32
+		{6095D3F2-1A74-4831-BABA-EB93A5DE2205}.Release|x86.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

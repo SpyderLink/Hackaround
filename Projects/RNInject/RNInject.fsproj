@@ -47,6 +47,11 @@
       <Project>{6f8e3ada-9a45-45b5-aa13-02114ac3dd26}</Project>
       <Private>True</Private>
     </ProjectReference>
+    <ProjectReference Include="..\RNCLI\RNCLI.vcxproj">
+      <Name>RNCLI</Name>
+      <Project>{6095d3f2-1a74-4831-baba-eb93a5de2205}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\RNInjector\Hackaround\Hackaround.fsproj">
       <Name>Hackaround</Name>
       <Project>{a7b9bbcd-18df-4d10-a14c-f14955a45a38}</Project>

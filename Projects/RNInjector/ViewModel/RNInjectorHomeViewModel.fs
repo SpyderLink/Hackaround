@@ -48,7 +48,7 @@ type RNInjectorHomeViewModel(accountRepository : AccountRepository)  =
 
 
     member X.Hack = 
-        new RelayCommand ((fun canExecute -> true), (fun action -> Hack.Inject() ))
+        new RelayCommand ((fun canExecute -> true), (fun action -> () (*Hack.Inject()*) ))
 
     member X.Login
         with get()      = login

@@ -37,7 +37,6 @@
     <Compile Include="Expense.fs" />
     <Compile Include="AccountModel.fs" />
     <Compile Include="PatchModel.fs" />
-    <Compile Include="Injector.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
