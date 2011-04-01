@@ -39,7 +39,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExpenseReportRepository.fs" />
+    <Compile Include="RNInjectorAccounts.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\RNModel.fsproj">

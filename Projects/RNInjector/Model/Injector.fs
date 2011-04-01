@@ -3,14 +3,15 @@
 open Process
 open Win32API
 
+open RNInvoke
+
 open System
 
 module Hack = 
     let Inject() =
 
-        // This part of Code I want on C++0x CLI
-
-        let wc3 = getProcess("War3")
+        // old code 
+        (*let wc3 = getProcess("War3")
 
         if (snd wc3) then
             let handler = (fst wc3).Handle
@@ -35,5 +36,6 @@ module Hack =
             HackAPI.VirtualProtectEx(handler, testoffset, (uint32)size, old_permissions, old_permissions)
             |> ignore
         else 
-            () //here must be a message
+            ()  *)
+
         ()

@@ -36,15 +36,12 @@
   <ItemGroup>
     <Compile Include="Expense.fs" />
     <Compile Include="AccountModel.fs" />
+    <Compile Include="PatchModel.fs" />
     <Compile Include="Injector.fs" />
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core" />
-    <Reference Include="NPOI">
-      <HintPath>D:\Dist\Libs\NPOI\NPOI.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
