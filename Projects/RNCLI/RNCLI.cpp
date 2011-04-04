@@ -24,7 +24,7 @@ namespace RNCLI
 	int Patcher::Inject(System::String ^ processName, System::String ^ moduleName, System::String ^ offsetstring, System::String ^ bytes)
 	{
 		unsigned char arr[2]; arr[0] = 0; arr[1] = 0;
-		unsigned long int offset = atol( cconv(offsetstring) );
+		DWORD offset = atol( cconv(offsetstring) );
 		unsigned int size = sizeof(arr);
 		return RNInvoke::Native::PatchSomething( wconv(processName), wconv(moduleName), offset, arr, size);
 	}
