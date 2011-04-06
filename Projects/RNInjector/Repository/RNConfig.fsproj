@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RNInjectorAccounts.fs" />
+    <Compile Include="RNMessages.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\RNModel.fsproj">

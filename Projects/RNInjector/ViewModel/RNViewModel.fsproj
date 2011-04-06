@@ -54,6 +54,11 @@
       <Project>{6f8e3ada-9a45-45b5-aa13-02114ac3dd26}</Project>
       <Private>True</Private>
     </ProjectReference>
+    <ProjectReference Include="..\..\RNInject\RNInject.fsproj">
+      <Name>RNInject</Name>
+      <Project>{6b1ae75c-07ec-45cd-bdad-40798c6ebe7e}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Hackaround\Hackaround.fsproj">
       <Name>Hackaround</Name>
       <Project>{a7b9bbcd-18df-4d10-a14c-f14955a45a38}</Project>

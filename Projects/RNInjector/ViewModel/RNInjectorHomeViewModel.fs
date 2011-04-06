@@ -6,8 +6,10 @@ open System.Windows.Data
 open System.Windows.Input
 open System.ComponentModel
 open System.Collections.ObjectModel
+
 open RNInjector.Model
 open RNInjector.Repository
+open RNInjector.Patchyard
 
 type RNInjectorHomeViewModel(accountRepository : AccountRepository)  =  
     inherit ViewModelBase()
@@ -48,7 +50,8 @@ type RNInjectorHomeViewModel(accountRepository : AccountRepository)  =
 
 
     member X.Hack = 
-        new RelayCommand ((fun canExecute -> true), (fun action -> () (*Hack.Inject()*) ))
+        new RelayCommand ( (fun canExecute -> true), (fun action -> 
+            ignore <| MessageBox.Show(Injector.inject( new PatchRepository() ) ) ))
 
     member X.Login
         with get()      = login

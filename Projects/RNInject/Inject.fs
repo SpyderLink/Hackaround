@@ -3,20 +3,29 @@
 open RNInvoke
 open RNInjector.Patchyard
 open RNInjector.Model
+open RNInjector.Messages
 open RNCLI
 
 open System
 open System.Collections.ObjectModel
 
 let inject(patchRepository : PatchRepository) =
-    let Patches = 
-        new ObservableCollection<PatchModel>(patchRepository.GetAll())
-    let patcher = new RNCLI.Patcher()
-    for p in Patches do
-        let patched = patcher.Inject(p.ProcessName, p.ModuleName , p.Offset , p.Bytes )
-        ()
-        //let offset : uint32 = p.Offset
-        //let 
-        //Native.PatchSomething(
-        //p.ProcessName,p.ModuleName,
-    ()
+    new ObservableCollection<PatchModel>(patchRepository.GetAll()) |> fun patches ->
+        new RNCLI.Patcher() |> fun patcher ->
+            let rec patch pi =
+                if pi < patches.Count then
+                    patches.[pi] |> fun p ->
+                        patcher.Inject(
+                            p.ProcessName, 
+                            p.ModuleName , 
+                            p.Offset , 
+                            p.Bytes ) |> fun patched ->
+                            match patched with
+                            | 0 -> patch <| pi + 1
+                            | some -> GetMessage patched
+                else null   // Fin
+
+            patch 0 |> fun patched ->
+                match patched with
+                | null -> "Patch done"
+                | some -> some
