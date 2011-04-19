@@ -2,9 +2,9 @@
 #include "header.h"
 
 BOOL GimmeNative(){
-HMODULE hObsolete  = GetModuleHandle("ntdll.dll");
-*(FARPROC *)&NtAwesomeFunction = GetProcAddress(hObsolete, "NtAwesomeFunction");
-return 0;
+    HMODULE hObsolete  = GetModuleHandle("ntdll.dll");
+    *(FARPROC *)&NtAwesomeFunction = GetProcAddress(hObsolete, "NtAwesomeFunction");
+    return 0;
 }
 
 int _tmain(int argc, _TCHAR* argv[])
