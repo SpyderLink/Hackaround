@@ -13,9 +13,6 @@
 /Projects/Debug
 /Projects/Release
 /Projects/ipch
-*.vs10x
-*.suo
-*.svn
 /Projects/DesuDLL/Release
 /Projects/DesuDLL/Debug
 /Projects/RNCLI/Release
@@ -24,3 +21,10 @@
 /Projects/RNInject/bin
 /Projects/PatchYard/obj
 /Projects/PatchYard/bin
+/Projects/Damnation/Damnation/Debug
+*.vs10x
+*.suo
+*.svn
+*.sdf
+*.opensdf
+*.user
