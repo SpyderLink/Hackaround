@@ -28,3 +28,5 @@
 *.sdf
 *.opensdf
 *.user
+/Projects/Damnation/Damnation/ipch
+/Projects/Damnation/Damnation/Damnation/Debug
