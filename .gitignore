@@ -30,3 +30,5 @@
 *.user
 /Projects/Damnation/Damnation/ipch
 /Projects/Damnation/Damnation/Damnation/Debug
+/Util/decode64/decode64/bin
+/Util/decode64/decode64/obj
