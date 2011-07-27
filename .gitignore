@@ -22,13 +22,17 @@
 /Projects/PatchYard/obj
 /Projects/PatchYard/bin
 /Projects/Damnation/Damnation/Debug
+/Projects/Damnation/Damnation/ipch
+/Projects/Damnation/Damnation/Damnation/Debug
+/Util/decode64/decode64/bin
+/Util/decode64/decode64/obj
+/Projects/Desu Injector/RNInjector/View/bin
+/Projects/Desu Injector/RNInjector/View/obj
 *.vs10x
 *.suo
 *.svn
 *.sdf
 *.opensdf
 *.user
-/Projects/Damnation/Damnation/ipch
-/Projects/Damnation/Damnation/Damnation/Debug
-/Util/decode64/decode64/bin
-/Util/decode64/decode64/obj
+*.cache
+*.ipch
