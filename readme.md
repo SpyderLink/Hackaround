@@ -5,7 +5,6 @@ Hackaround tools
  * \Lib\ - C/C++ Libraries and code snippets
  
  * \Util\CHAR_2_ASCII\ - C++ util to convert char to ascii
- * \Util\decode64\ - C# 64bit / AES encoder/decoder
  * \Util\Get_CS\ - C++ (VCL) tools to get checksumm etc
  * \Util\TestSocket\ - simple C++ (VCL) socjets
 
