@@ -18,7 +18,3 @@ Licensed under [LGPL3](http://www.gnu.org/licenses/lgpl-3.0-standalone.html)
 <br/>
 
 ![source-code](https://raw.github.com/BlackRock/PICTURES/master/1.png)
-
-<br/>
-
-![source-code](https://raw.github.com/BlackRock/PICTURES/master/Licenses/lgpl-v3-logo.png)
