@@ -11,8 +11,9 @@ Hackaround tools
  * \Projects\Damnation\ - a WinDDK NTLoader workarounds
  * \Projects\Desu Injector\ - Tool for automatic injecting (C++ C# F# MVVM)
  
-Licensed under GPL3
-===================
+
+Licensed under [LGPL3](http://www.gnu.org/licenses/lgpl-3.0-standalone.html)
+=======================
 
 <br/>
 
